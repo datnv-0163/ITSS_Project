@@ -11,7 +11,8 @@ import { CalculatorStyles } from './styles/Styles';
 const Calculator = () => (
   <CalculatorStyles>
     <div className="display">
-        <h2>CALL-U-LATER</h2>
+        <h1>カルキュレーター</h1>
+        <h3>(CALL-U-LATER)</h3>
       <Display />
     </div>
     <div className="number-pad">

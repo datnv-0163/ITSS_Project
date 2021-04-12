@@ -10,7 +10,7 @@ const Display = () => {
         {!number.length && !storedNumber ? '0' : number || storedNumber}
       </h2>
       <p >
-        {!storedNumber ? 'ENTER SOME NUMBERS' : `${storedNumber} ${functionType} ${number}`}
+        {!storedNumber ? '番号入力' : `${storedNumber} ${functionType} ${number}`}
       </p>
     </DisplayStyles>
   );

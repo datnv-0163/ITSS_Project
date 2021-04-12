@@ -18,6 +18,13 @@ export const CalculatorStyles = styled.div`
       color: white;
       text-align: center;
     }
+    h3 {
+      font-size: 2rem;
+      color: white;
+      text-align: center;
+      margin-top:-30px;
+      margin-bottom:50px;
+    }
   }
   .number-pad {
     /* grid-area: numbers; */
