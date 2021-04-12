@@ -76,6 +76,7 @@ const NumberProvider = props => {
           break;
       }
       setNumber('');
+      setFunctionType('');
     }
   };
 
