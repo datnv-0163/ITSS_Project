@@ -14,7 +14,8 @@ const NumberProvider = props => {
   };
 
   const handleSetStoredValue = () => {
-    
+    setStoredNumber(number);
+    setNumber('');
   };
 
   const handleClearValue = () => {
@@ -31,7 +32,13 @@ const NumberProvider = props => {
   };
 
   const handleSetCalcFunction = type => {
-
+    if (number) {
+      setFunctionType(type);
+      handleSetStoredValue();
+    }
+    if (storedNumber) {
+      setFunctionType(type);
+    }
   };
 
   const handleToggleNegative = () => {
@@ -51,7 +58,25 @@ const NumberProvider = props => {
   };
 
   const doMath = () => {
-
+    if (number && storedNumber) {
+      switch (functionType) {
+        case '+':
+          setStoredNumber(`${Math.round(`${(parseFloat(storedNumber) + parseFloat(number)) * 100}`) / 100}`);
+          break;
+        case '-':
+          setStoredNumber(`${Math.round(`${(parseFloat(storedNumber) - parseFloat(number)) * 1000}`) / 1000}`);
+          break;
+        case '/':
+          setStoredNumber(`${Math.round(`${(parseFloat(storedNumber) / parseFloat(number)) * 1000}`) / 1000}`);
+          break;
+        case '*':
+          setStoredNumber(`${Math.round(`${parseFloat(storedNumber) * parseFloat(number) * 1000}`) / 1000}`);
+          break;
+        default:
+          break;
+      }
+      setNumber('');
+    }
   };
 
   return (
