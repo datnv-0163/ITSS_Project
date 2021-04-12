@@ -22,7 +22,10 @@ const NumberProvider = props => {
   };
 
   const handleBackButton = () => {
-
+    if (number !== '') {
+      const deletedNumber = number.slice(0, number.length - 1);
+      setNumber(deletedNumber);
+    }
   };
 
   const handleSetCalcFunction = type => {
